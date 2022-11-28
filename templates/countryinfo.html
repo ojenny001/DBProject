@@ -1,0 +1,13 @@
+<h1>
+	movies produced in {{ country }} 
+</h1>
+
+<h2>
+	{% for m in movie %}
+		{% if m == movie[-1] %}
+			{{m['title']}}
+		{% else %}
+			{{m['title']}},
+		{% endif %}
+	{% endfor %}
+</h2>

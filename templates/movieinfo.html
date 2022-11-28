@@ -1,0 +1,55 @@
+<h1>Director:
+	{% for d in director %}
+		{% if d == director[-1] %}
+			{{d['director_name']}}
+		{% else %}
+			{{d['director_name']}},
+		{% endif %}
+	{% endfor %}
+</h1>
+
+<h1>Cast:
+	{% for c in cast %}
+		{% if c == cast[-1] %}
+			{{c['actor_name']}}
+		{% else %}
+			{{c['actor_name']}},
+		{% endif %}
+	{% endfor %}
+</h1>
+
+<h1>Genre:
+	{% for g in genre %}
+		{% if g == genre[-1] %}
+			{{g['genre']}}
+		{% else %}
+			{{g['genre']}},
+		{% endif %}
+	{% endfor %}
+</h1>
+
+<h1>Original Language:
+	{% for l in language %}
+		{% if l == language[-1] %}
+			{{l['language']}}
+		{% else %}
+			{{l['language']}},
+		{% endif %}
+	{% endfor %}
+</h1>
+
+<h1>Production Country:
+	{% for c in country %}
+		{% if c == country[-1] %}
+			{{c['country']}}
+		{% else %}
+			{{c['country']}},
+		{% endif %}
+	{% endfor %}
+</h1>
+
+<h1>Release Year:
+	{% for y in year %}
+		{{y['release_year']}}
+	{% endfor %}
+</h1>

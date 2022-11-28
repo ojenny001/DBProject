@@ -1,0 +1,27 @@
+<h1>{{director}}
+</h1>
+
+<h2>
+	Filmography:
+	{% for m in movie %}
+		{% if m == movie[-1] %}
+			{{m['title']}}
+		{% else %}
+			{{m['title']}},
+		{% endif %}
+	{% endfor %}
+</h2>
+
+<h2>
+	Born:
+	{% for b in birthdate %}
+		{{b['director_birth_date']}}
+	{% endfor %}
+</h2>
+
+<h2>
+	Gender:
+	{% for g in gender %}
+		{{g['director_gender']}}
+	{% endfor %}
+</h2>

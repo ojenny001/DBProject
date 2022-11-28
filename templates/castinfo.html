@@ -1,0 +1,34 @@
+<h1>{{cast}}
+</h1>
+
+<h2>
+	Filmography:
+	{% for m in movie %}
+		{% if m == movie[-1] %}
+			{{m['title']}}
+		{% else %}
+			{{m['title']}},
+		{% endif %}
+	{% endfor %}
+</h2>
+
+<h2>
+	Born:
+	{% for b in birthdate %}
+		{{b['birth_date']}}
+	{% endfor %}
+</h2>
+
+<h2>
+	Nationality:
+	{% for n in nationality %}
+		{{n['nationality']}}
+	{% endfor %}
+</h2>
+
+<h2>
+	Gender:
+	{% for g in gender %}
+		{{g['gender']}}
+	{% endfor %}
+</h2>
