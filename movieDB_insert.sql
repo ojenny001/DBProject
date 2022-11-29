@@ -58,7 +58,7 @@ insert into Director (director_id, director_name, director_birth_date, director_
 insert into Director (director_id, director_name, director_birth_date, director_gender) values (5, 'Bennett Miller', '1966-12-30', 'Male');
 insert into Director (director_id, director_name, director_birth_date, director_gender) values (6, 'Billy Wilder', '1906-06-22', 'Male');
 insert into Director (director_id, director_name, director_birth_date, director_gender) values (7, 'Brian De Palma', '1940-09-11', 'Male');
-insert into Director (director_id, director_name, director_birth_date, director_gender) values (8. 'Charlie Chaplin', '1899-04-16', 'Male');
+insert into Director (director_id, director_name, director_birth_date, director_gender) values (8, 'Charlie Chaplin', '1899-04-16', 'Male');
 insert into Director (director_id, director_name, director_birth_date, director_gender) values (9, 'Christopher Nolan', '1970-07-30', 'Male');
 insert into Director (director_id, director_name, director_birth_date, director_gender) values (10, 'Clint Eastwood', '1930-05-31', 'Male');
 insert into Director (director_id, director_name, director_birth_date, director_gender) values (11, 'Ethan Coen', '1957-09-21', 'Male');
