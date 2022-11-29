@@ -2,40 +2,92 @@
 
   <center>
     <form class='grid' action='/movieinfo' method='POST'>
-      <input type='text' name='movie_title' id='name'>
+      <input type='text' name='movie_title' id='id_movie_title'>
       <input type='Submit' class='file_submit' value='Title'>
     </form>
   </center>
 
   <center>
     <form class='grid' action='/directorinfo' method='POST'>
-      <input type='text' name='movie_director' id='name'>
+      <input type='text' name='movie_director' id='id_movie_director'>
       <input type='Submit' class='file_submit' value='Director'>
     </form>
   </center>
 
   <center>
     <form class='grid' action='/castinfo' method='POST'>
-      <input type='text' name='movie_cast' id='name'>
+      <input type='text' name='movie_cast' id='id_movie_cast'>
       <input type='Submit' class='file_submit' value='Cast'>
     </form>
   </center>
 
   <center>
     <form class='grid' action='/genreinfo' method='POST'>
-      <input type='text' name='movie_genre' id='name'>
+      <input type='text' name='movie_genre' id='id_movie_genre'>
       <input type='Submit' class='file_submit' value='Genre'>
     </form>
   </center>
 
   <center>
     <form class='grid' action='/countryinfo' method='POST'>
-      <input type='text' name='movie_country' id='name'>
+      <input type='text' name='movie_country' id='id_movie_country'>
       <input type='Submit' class='file_submit' value='Country'>
     </form>
   </center>
+
+  <center>
+    <form class='grid' action='/addMovie' method='POST'>
+      <input type='text' name='add_id' id='id_add_id' placeholder='Movie id'>
+      <input type='text' name='add_title' id='id_add_title' placeholder='Title'>
+      <input type='text' name='add_year' id='id_add_year' placeholder='Release Year'>
+      <input type='Submit' class='file_submit' value='Add Movie Data'>
+    </form>
+  </center>
+
+  <center>
+    <form class='grid' action='/addDirector' method='POST'>
+      <input type='text' name='add_director_id' id='id_add_director_id' placeholder='Director id'>
+      <input type='text' name='add_director' id='id_add_director' placeholder='Name'>
+      <input type='text' name='add_director_bd' id='id_add_director_bd' placeholder='Birth Date'>
+      <input type='text' name='add_director_gd' id='id_add_director_gd' placeholder='Gender'>
+      <input type='Submit' class='file_submit' value='Add Director Data'>
+    </form>
+  </center>
+
+  <center>
+    <form class='grid' action='/addCast' method='POST'>
+      <input type='text' name='add_cast_id' id='id_add_cast_id' placeholder='Cast id'>
+      <input type='text' name='add_cast' id='id_add_cast' placeholder='Name'>
+      <input type='text' name='add_cast_bd' id='id_add_cast_bd' placeholder='Birth Date'>
+      <input type='text' name='add_cast_gd' id='id_add_cast_gd' placeholder='Gender'>
+      <input type='Submit' class='file_submit' value='Add Cast Data'>
+    </form>
+  </center>
+
+  <center>
+    <form class='grid' action='/updateMovie' method='POST'>
+      <input type='text' name='original_title' id='id_original_title' placeholder='Original Title'>
+      <input type='text' name='new_title' id='id_new_title' placeholder='New Title'>
+      <input type='Submit' class='file_submit' value='Update Movie Title'>
+    </form>
+  </center>
+
+  <center>
+    <form class='grid' action='/deleteMovie' method='POST'>
+      <input type='text' name='movie_title' id='id_movie_title' placeholder='Movie Title'>
+      <input type='Submit' class='file_submit' value='Delete Movie Title'>
+    </form>
+  </center>
+
+
+
+
+
+
+
   
   <!---
+    <input type='text' name='add_year' id='id_add_year' placeholder='Release Year'>
   <form class='grid' action='/movieinfo' method='POST'>
     <div class="container">
       <input type='checkbox' id='title'>

@@ -3,7 +3,7 @@ import pymysql
 def mysqlconnect():
     connection = pymysql.connect(host='127.0.0.1',
                              user='root',
-                             password='temporary_password', # change this to a real password when testing
+                             password='Gjdbswn1319!', # change this to a real password when testing
                              database='MovieDB',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
@@ -115,19 +115,64 @@ def countryToMovie(country):
 	output = cur.fetchall()
 	return output
 
-#if __name__ == "__main__" :
-	#titleToDirector('The Dark Knight')
-	#titleToCast('The Dark Knight')
-	#titleToGenre('The Dark Knight')
-	#titleToLanguage('The Dark Knight')
-	#titleToCountry('The Dark Knight')
-	#titleToYear('The Dark Knight')
-	#directorToMovie('Christopher Nolan')
-	#directorToBirthdate('Christopher Nolan')
-	#directorToGender('Christopher Nolan')
-	#actorToMovie('Brad Pitt')
-	#actorToBirthdate('Brad Pitt')
-	#actorToNationality('Brad Pitt')
-	#actorToGender('Brad Pitt')
-	#genreToMovie('comedy')
-	#countryToMovie('Germany')
+def addNewMovie(movie_id, title, year):
+	cur = mysqlconnect().cursor()
+	sql = "insert into Movie (movie_id, title, release_year) values(%s, %s, %s)"
+	cur.execute(sql, (movie_id, title, year))
+
+	''' test
+	cur.execute('select * from Movie')
+	output = cur.fetchall()
+	for o in output:
+		print(o)
+	'''
+
+def addNewDirector(director_id, director_name, director_birth_date, director_gender):
+	cur = mysqlconnect().cursor()
+	sql = "insert into Director (director_id, director_name, director_birth_date, director_gender) values(%s, %s, %s, %s)"
+	cur.execute(sql, (director_id, director_name, director_birth_date, director_gender))
+
+	''' test
+	cur.execute('select * from Director')
+	output = cur.fetchall()
+	for o in output:
+		print(o)
+	'''
+
+def addNewCast(actor_id, actor_name, actor_birth_date, actor_gender):
+	cur = mysqlconnect().cursor()
+	sql = "insert into Actor (actor_id, actor_name, birth_date, gender) values(%s, %s, %s, %s)"
+	cur.execute(sql, (actor_id, actor_name, actor_birth_date, actor_gender))
+
+	''' test
+	cur.execute('select * from Actor')
+	output = cur.fetchall()
+	for o in output:
+		print(o)
+	'''
+
+def updateTitle(original_title, new_title):
+	cur = mysqlconnect().cursor()
+	sql = 'update Movie set title = %s where title = %s'
+	cur.execute(sql, (new_title, original_title))
+
+	''' test
+	cur.execute('select * from Movie')
+	output = cur.fetchall()
+	for o in output:
+		print(o)
+	'''
+
+def deleteTitle(movie_title):
+	cur = mysqlconnect().cursor()
+	cur.execute('SET FOREIGN_KEY_CHECKS=OFF')
+	sql = 'delete from Movie where title = %s'
+	cur.execute(sql, (movie_title))
+	cur.execute('SET FOREIGN_KEY_CHECKS=ON')
+
+	''' test
+	cur.execute('select * from Movie')
+	output = cur.fetchall()
+	for o in output:
+		print(o)
+	'''
