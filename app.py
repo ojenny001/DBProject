@@ -61,7 +61,11 @@ def addMovie():
 	movie_id = data['add_id']
 	title = data['add_title']
 	year = data['add_year']
-	addNewMovie(movie_id, title, year)
+	revenue = data['add_revenue']
+	runtime = data['add_runtime']
+	country = data['add_country']
+	language = data['add_language']
+	addNewMovie(movie_id, title, year, revenue, runtime, country, language)
 
 	return render_template('addedmovie.html')
 
@@ -103,6 +107,49 @@ def deleteMovie():
 	deleteTitle(movie_title)
 
 	return render_template('deletedtitle.html', title=movie_title)
+
+@app.route('/hrevenue', methods=['POST', 'GET'])
+def hrevenue():
+	highest = highestRevenue()['title']
+
+	return render_template('hrevenue.html', highest=highest)
+
+@app.route('/lrevenue', methods=['POST', 'GET'])
+def lrevenue():
+	lowest = lowestRevenue()['title']
+
+	return render_template('lrevenue.html', lowest=lowest)
+
+@app.route('/averageruntime', methods=['POST', 'GET'])
+def averageruntime():
+	average = int(avgRuntime()['avg(runtime)'])
+
+	return render_template('averageruntime.html', average=average)
+
+@app.route('/actorrevenue', methods=['POST', 'GET'])
+def actorrevenue():
+	data = request.form.to_dict()
+	actor = data['actor_revenue']
+	revenue = totalRevenue(actor)['sum(revenue)']
+
+	return render_template('actorrevenue.html', revenue=revenue, actor=actor)
+
+@app.route('/actorgr', methods=['POST', 'GET'])
+def actorgr():
+	data = request.form.to_dict()
+	revenue = data['actor_revenue']
+	actors = actorrevenuegr(revenue)
+
+	return render_template('actorgr.html', actors=actors)
+
+@app.route('/directorlr', methods=['POST', 'GET'])
+def directorlr():
+	data = request.form.to_dict()
+	revenue = data['director_revenue']
+	directors = directorrevenuelr(revenue)
+	print(directors)
+
+	return render_template('directorlr.html', directors=directors)
 
 
 if __name__ == "__main__":

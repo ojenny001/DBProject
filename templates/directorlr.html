@@ -1,0 +1,9 @@
+<h1>
+	{% for d in directors %}
+		{% if d == directors[-1] %}
+			{{d['director_name']}}
+		{% else %}
+			{{d['director_name']}},
+		{% endif %}
+	{% endfor %}
+</h1>

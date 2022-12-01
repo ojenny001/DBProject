@@ -1,0 +1,9 @@
+<h1>
+	{% for a in actors %}
+		{% if a == actors[-1] %}
+			{{a['actor_name']}}
+		{% else %}
+			{{a['actor_name']}},
+		{% endif %}
+	{% endfor %}
+</h1>

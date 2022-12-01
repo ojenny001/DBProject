@@ -40,6 +40,10 @@
       <input type='text' name='add_id' id='id_add_id' placeholder='Movie id'>
       <input type='text' name='add_title' id='id_add_title' placeholder='Title'>
       <input type='text' name='add_year' id='id_add_year' placeholder='Release Year'>
+      <input type='text' name='add_revenue' id='id_add_revenue' placeholder='Revenue'>
+      <input type='text' name='add_runtime' id='id_add_runtime' placeholder='Runtime'>
+      <input type='text' name='add_country' id='id_add_country' placeholder='Country'>
+      <input type='text' name='add_language' id='id_add_language' placeholder='Language'>
       <input type='Submit' class='file_submit' value='Add Movie Data'>
     </form>
   </center>
@@ -76,6 +80,41 @@
     <form class='grid' action='/deleteMovie' method='POST'>
       <input type='text' name='movie_title' id='id_movie_title' placeholder='Movie Title'>
       <input type='Submit' class='file_submit' value='Delete Movie Title'>
+    </form>
+  </center>
+
+  <center>
+    <form class='grid' action='/hrevenue' method='POST'>
+      <input type='Submit' class='file_submit' value='highest revenue'>
+    </form>
+    <form class='grid' action='/lrevenue' method='POST'>
+      <input type='Submit' class='file_submit' value='lowest revenue'>
+    </form>
+    <form class='grid' action='/averageruntime' method='POST'>
+      <input type='Submit' class='file_submit' value='average runtime'>
+    </form>
+  </center>
+
+  <center>
+    <form class='grid' action='/actorrevenue' method='POST'>
+      <input type='text' name='actor_revenue' id='id_actor_revenue' placeholder='actor'>
+      <input type='Submit' class='file_submit' value='Total Revenue'>
+    </form>
+  </center>
+
+  <center>
+    <form class='grid' action='/actorgr' method='POST'>
+      Actors with movie revenue greater than
+      <input type='text' name='actor_revenue' id='id_actor_revenue' placeholder='revenue'>
+      <input type='Submit' class='file_submit' value='Submit'>
+    </form>
+  </center>
+
+  <center>
+    <form class='grid' action='/directorlr' method='POST'>
+      Directors with movie revenue less than
+      <input type='text' name='director_revenue' id='id_director_revenue' placeholder='revenue'>
+      <input type='Submit' class='file_submit' value='Submit'>
     </form>
   </center>
 
